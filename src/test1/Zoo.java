@@ -14,6 +14,8 @@ public class Zoo {
 		int days = Integer.parseInt(dayString);
 
 		ZooKeeper zookeeper = new ZooKeeper("David");
+		ZooAnnouncer zooAnnouncer = new ZooAnnouncer();
+		zookeeper.addObserver(zooAnnouncer);
 
 		Cat cat = new Cat("Charlie");
 		Tiger tiger = new Tiger("Tom");
