@@ -12,6 +12,8 @@ public class Zoo {
 		System.out.println("Enter the amount of days");
 		String dayString = input.nextLine();
 		int days = Integer.parseInt(dayString);
+		
+		ZooClock clock = new ZooClock(8); //starts at 8
 
 		ZooKeeper zookeeper = new ZooKeeper("David");
 		ZooAnnouncer zooAnnouncer = new ZooAnnouncer();
@@ -32,6 +34,11 @@ public class Zoo {
 
 			zookeeper.arrive(i+1);
 			
+			System.out.println("The zookeeper has arrived at " + clock.getClockStatus() + " hours");
+			clock.iterateClock();
+			
+			System.out.println("The animals are starting to wake at " + clock.getClockStatus() + " hours");
+			
 			zookeeper.wakeAnimal(cat);
 			zookeeper.wakeAnimal(tiger);
 			zookeeper.wakeAnimal(dog);
@@ -40,6 +47,11 @@ public class Zoo {
 			zookeeper.wakeAnimal(snake);
 			zookeeper.wakeAnimal(hippo);
 			zookeeper.wakeAnimal(rhino);
+			
+			clock.iterateClock();
+			clock.iterateClock();
+			System.out.println("The animals are being called at " + clock.getClockStatus() + " hours");
+
 
 			zookeeper.callAnimal(cat);
 			zookeeper.callAnimal(tiger);
@@ -49,6 +61,10 @@ public class Zoo {
 			zookeeper.callAnimal(snake);
 			zookeeper.callAnimal(hippo);
 			zookeeper.callAnimal(rhino);
+			
+			clock.iterateClock();
+			clock.iterateClock();
+			System.out.println("The animals are being fed at " + clock.getClockStatus() + " hours");
 
 			zookeeper.feedAnimal(cat);
 			zookeeper.feedAnimal(tiger);
@@ -58,6 +74,11 @@ public class Zoo {
 			zookeeper.feedAnimal(snake);
 			zookeeper.feedAnimal(hippo);
 			zookeeper.feedAnimal(rhino);
+			
+			
+			clock.iterateClock();
+			clock.iterateClock();
+			System.out.println("The animals are being exercised " + clock.getClockStatus() + " hours");
 
 			zookeeper.exerciseAnimal(cat);
 			zookeeper.exerciseAnimal(tiger);
@@ -105,6 +126,10 @@ public class Zoo {
 			} else {
 				zookeeper.sleepAnimal(tiger);
 			}
+			
+			clock.iterateClock();
+			clock.iterateClock();
+			System.out.println("The animals are being put to sleep " + clock.getClockStatus() + " hours");
 
 			zookeeper.sleepAnimal(dog);
 			zookeeper.sleepAnimal(wolf);
@@ -112,7 +137,15 @@ public class Zoo {
 			zookeeper.sleepAnimal(snake);
 			zookeeper.sleepAnimal(hippo);
 			zookeeper.sleepAnimal(rhino);
+			
+			clock.iterateClock();
+			clock.iterateClock();
+			clock.iterateClock();
+			System.out.println("The zookeeper is leaving for the day at " + clock.getClockStatus() + " hours");
+			
 			zookeeper.leave(i+1);
+			
+			clock.resetClock();
 
 		}
 
