@@ -9,6 +9,7 @@
 
 ## Issues
 ###### 1) Through eclipse we had to give each class its own file, making it messy and difficult at times to keep track of. 
+###### 2) We had issues updating two observeables at the same time, but in the end we only needed to add an "if" statement. 
 
 
 ## Instructions to run code
