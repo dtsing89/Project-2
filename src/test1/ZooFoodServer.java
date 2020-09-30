@@ -1,6 +1,9 @@
 package test1;
 
+import java.io.*;
+import java.io.IOException;
 import java.util.Observable;
+
 
 public class ZooFoodServer extends Observable {
 	private String name;
@@ -12,18 +15,27 @@ public class ZooFoodServer extends Observable {
 		this.name = name;
 	}
 
-	public void clean() {
-		System.out.println("ZooFoodServer is cleaning");
+	public void clean() throws IOException {
+		//System.out.println("ZooFoodServer is cleaning");
+		FileWriter writer = new FileWriter("dayatthezoo.out", true);
+		writer.write("ZooFoodServer is cleaning");
+		writer.close();
 		setCurrentTask("cleaning");
 	}
 
-	public void make() {
-		System.out.println("ZooFoodServer is making the food");
+	public void make() throws IOException {
+		//System.out.println("ZooFoodServer is making the food");
+		FileWriter writer = new FileWriter("dayatthezoo.out", true);
+		writer.write("ZooFoodServer is making the food");
+		writer.close();
 		setCurrentTask("making food");
 	}
 
-	public void serve() {
-		System.out.println("ZooFoodServer is serving the food");
+	public void serve() throws IOException{
+		//System.out.println("ZooFoodServer is serving the food");
+		FileWriter writer = new FileWriter("dayatthezoo.out", true);
+		writer.write("ZooFoodServer is serving the food");
+		writer.close();
 		setCurrentTask("serving food");
 	}
 	public String getType() {

@@ -18,9 +18,9 @@ zookeeper roll calls Lilly the lizard
 zookeeper roll calls Sam the snake
 zookeeper roll calls Harry the hippo
 zookeeper roll calls Rick the rhino
- at 12:00 hours
- at 12:00 hours
- at 12:00 hours
+ZooFoodServer is making the food at 12:00 hours
+ZooFoodServer is serving the foodZooFoodServer is making the food at 12:00 hours
+ZooFoodServer is serving the food at 12:00 hours
 The animals are being fed at 13:00 hours
 zookeeper feeds Charlie the cat
 zookeeper feeds Tom the tiger
@@ -40,15 +40,15 @@ zookeeper exercises Lilly the lizard
 zookeeper exercises Sam the snake
 zookeeper exercises Harry the hippo
 zookeeper exercises Rick the rhino
-zookeeper roll calls Charlie the cat
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
-zookeeper roll calls Tom the tiger
+zookeeper exercises Charlie the cat
+ZooFoodServer is cleaning at 15:00 hours
+ZooFoodServer is making the food at 15:00 hours
+ZooFoodServer is serving the food at 15:00 hours
+ZooFoodServer is cleaningZooFoodServer is cleaning at 15:00 hours
+ZooFoodServer is making the food at 15:00 hours
+ZooFoodServer is serving the food at 15:00 hours
+ZooFoodServer is cleaning at 15:00 hours
+zookeeper sleeps Tom the tiger
 The animals are being put to sleep 17:00 hours
 zookeeper sleeps Dug the dog
 zookeeper sleeps Wendy the wolf
@@ -78,9 +78,9 @@ zookeeper roll calls Lilly the lizard
 zookeeper roll calls Sam the snake
 zookeeper roll calls Harry the hippo
 zookeeper roll calls Rick the rhino
- at 12:00 hours
- at 12:00 hours
- at 12:00 hours
+ZooFoodServer is making the food at 12:00 hours
+ZooFoodServer is serving the foodZooFoodServer is making the food at 12:00 hours
+ZooFoodServer is serving the food at 12:00 hours
 The animals are being fed at 13:00 hours
 zookeeper feeds Charlie the cat
 zookeeper feeds Tom the tiger
@@ -101,14 +101,14 @@ zookeeper exercises Sam the snake
 zookeeper exercises Harry the hippo
 zookeeper exercises Rick the rhino
 zookeeper roll calls Charlie the cat
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
- at 15:00 hours
-zookeeper exercises Tom the tiger
+ZooFoodServer is cleaning at 15:00 hours
+ZooFoodServer is making the food at 15:00 hours
+ZooFoodServer is serving the food at 15:00 hours
+ZooFoodServer is cleaningZooFoodServer is cleaning at 15:00 hours
+ZooFoodServer is making the food at 15:00 hours
+ZooFoodServer is serving the food at 15:00 hours
+ZooFoodServer is cleaning at 15:00 hours
+zookeeper roll calls Tom the tiger
 The animals are being put to sleep 17:00 hours
 zookeeper sleeps Dug the dog
 zookeeper sleeps Wendy the wolf
