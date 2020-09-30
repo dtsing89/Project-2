@@ -18,13 +18,10 @@ public class Zoo {
 		ZooKeeper zookeeper = new ZooKeeper("David");
 		ZooAnnouncer zooAnnouncer = new ZooAnnouncer();
 		zookeeper.addObserver(zooAnnouncer);
-<<<<<<< HEAD
-		ZooFoodServer zoofoodserver = new ZooFoodServer("Frank");
-		zoofoodserver.addObserver(zooAnnouncer);
-=======
+
 		ZooFoodServer server = new ZooFoodServer("Frank");
 		server.addObserver(zooAnnouncer);
->>>>>>> 3f2eae37f8a91066543ffb761b34eac5a1206973
+
 
 		Cat cat = new Cat("Charlie");
 		Tiger tiger = new Tiger("Tom");
@@ -71,15 +68,15 @@ public class Zoo {
 			
 			clock.iterateClock();
 			
-<<<<<<< HEAD
-			zoofoodserver.make();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
-			zoofoodserver.serve();
-=======
+
 			server.make();
 			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
 			server.serve();
->>>>>>> 3f2eae37f8a91066543ffb761b34eac5a1206973
+
+			server.make();
+			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			server.serve();
+
 			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
 			
 			clock.iterateClock();
@@ -97,11 +94,11 @@ public class Zoo {
 			
 			clock.iterateClock();
 			clock.iterateClock();
-<<<<<<< HEAD
+
 			System.out.println("The animals are exercising at" + clock.getClockStatus() + ":00 hours");
-=======
+
 			System.out.println("The animals are being exercised " + clock.getClockStatus() + ":00 hours");
->>>>>>> 3f2eae37f8a91066543ffb761b34eac5a1206973
+
 
 			zookeeper.exerciseAnimal(cat);
 			zookeeper.exerciseAnimal(tiger);
@@ -139,15 +136,7 @@ public class Zoo {
 			}
 
 			//////
-<<<<<<< HEAD
-			zoofoodserver.clean();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
-			zoofoodserver.make();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
-			zoofoodserver.serve();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
-			zoofoodserver.clean();
-=======
+
 			server.clean();
 			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
 			server.make();
@@ -155,7 +144,15 @@ public class Zoo {
 			server.serve();
 			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
 			server.clean();
->>>>>>> 3f2eae37f8a91066543ffb761b34eac5a1206973
+
+			server.clean();
+			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			server.make();
+			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			server.serve();
+			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			server.clean();
+
 			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
 
 			random = zookeeper.rand();
@@ -173,11 +170,8 @@ public class Zoo {
 			
 			///////////
 			
-<<<<<<< HEAD
+
 			System.out.println("The animals are being put to sleep " + clock.getClockStatus() + ":00 hours");
-=======
-			System.out.println("The animals are being put to sleep " + clock.getClockStatus() + " hours");
->>>>>>> 3f2eae37f8a91066543ffb761b34eac5a1206973
 
 			zookeeper.sleepAnimal(dog);
 			zookeeper.sleepAnimal(wolf);
@@ -189,19 +183,15 @@ public class Zoo {
 			clock.iterateClock();
 			clock.iterateClock();
 			clock.iterateClock();
-<<<<<<< HEAD
+
 			System.out.println("The zookeeper is leaving for the day at " + clock.getClockStatus() + ":00 hours");
-=======
-			System.out.println("The zookeeper is leaving for the day at " + clock.getClockStatus() + " hours");
->>>>>>> 3f2eae37f8a91066543ffb761b34eac5a1206973
 			
 			zookeeper.leave(i+1);
 			
 			clock.resetClock();
-<<<<<<< HEAD
-=======
 
->>>>>>> 3f2eae37f8a91066543ffb761b34eac5a1206973
+
+
 		}
 	}
 }
