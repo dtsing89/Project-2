@@ -41,17 +41,12 @@ public class Zoo {
 			zookeeper.arrive(i+1);
 			
 			
-			
-			//previous print statement replaced with filewriter function
-			//System.out.println("The zookeeper has arrived at " + clock.getClockStatus() + ":00 hours"); 
 			printWords("The zookeeper has arrived at " + clock.getClockStatus() + ":00 hours");
 			
 			
 			clock.iterateClock(); //9 o'clock
 			
 			
-			//previous print statement replaced with filewriter function
-			//System.out.println("The animals are starting to wake at " + clock.getClockStatus() + ":00 hours");
 			printWords("The animals are starting to wake at " + clock.getClockStatus() + ":00 hours");
 			
 			
@@ -66,11 +61,10 @@ public class Zoo {
 			zookeeper.wakeAnimal(rhino);
 			
 
-			
 			clock.iterateClock(); //10 o'clock
 			clock.iterateClock(); //11 o'clock
 			
-			//previous print statement replaced with filewriter function
+
 			//System.out.println("The animals are being called at " + clock.getClockStatus() + ":00 hours");
 			printWords("The animals are being called at " + clock.getClockStatus() + ":00 hours");
 
@@ -88,8 +82,8 @@ public class Zoo {
 			
 			clock.iterateClock(); //12 o'clock
 			
-
 			
+			//food server calls
 			server.make();
 			printWords(" at " + clock.getClockStatus() + ":00 hours");
 			server.serve();
@@ -102,6 +96,8 @@ public class Zoo {
 			clock.iterateClock(); //1 o'clock
 			printWords("The animals are being fed at " + clock.getClockStatus() + ":00 hours");
 
+			
+			//feed animal calls
 			zookeeper.feedAnimal(cat);
 			zookeeper.feedAnimal(tiger);
 			zookeeper.feedAnimal(dog);
@@ -114,11 +110,13 @@ public class Zoo {
 			
 			clock.iterateClock(); //2 o'clock
 			clock.iterateClock(); //3 o'clock
-
-			printWords("The animals are exercising at" + clock.getClockStatus() + ":00 hours");
+			
+			
+			printWords("The animals are exercising at " + clock.getClockStatus() + ":00 hours");
 			printWords("The animals are being exercised " + clock.getClockStatus() + ":00 hours");
 
-
+			
+			//exercise animal calls
 			zookeeper.exerciseAnimal(cat);
 			zookeeper.exerciseAnimal(tiger);
 			if (random > 25) {
@@ -142,8 +140,6 @@ public class Zoo {
 				zookeeper.charge(rhino);
 			}
 
-			//////
-
 			random = zookeeper.rand();
 
 			if (random <= 30) {
@@ -154,8 +150,8 @@ public class Zoo {
 				zookeeper.sleepAnimal(cat);
 			}
 
-			//////
 
+			//food server calls
 			server.clean();
 			printWords(" at " + clock.getClockStatus() + ":00 hours");
 			server.make();
@@ -184,14 +180,15 @@ public class Zoo {
 				zookeeper.sleepAnimal(tiger);
 			}
 			
+			
 			clock.iterateClock(); //4 o'clock
 			clock.iterateClock(); //5 o'clock
-			
-			///////////
 			
 
 			printWords("The animals are being put to sleep " + clock.getClockStatus() + ":00 hours");
 
+			
+			//sleep animal calls
 			zookeeper.sleepAnimal(dog);
 			zookeeper.sleepAnimal(wolf);
 			zookeeper.sleepAnimal(lizard);
@@ -203,13 +200,12 @@ public class Zoo {
 			clock.iterateClock(); //7 o'clock
 			clock.iterateClock(); //8 o'clock
 
+			
 			printWords("The zookeeper is leaving for the day at " + clock.getClockStatus() + ":00 hours");
 			
 			zookeeper.leave(i+1);
 			
 			clock.resetClock();
-
-
 		}
 		
 	}
