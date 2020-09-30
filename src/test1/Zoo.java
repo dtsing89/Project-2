@@ -8,21 +8,23 @@ import java.io.IOException;
 public class Zoo {
 
 	public static void main(String[] args) throws IOException {
+		//input
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the amount of days");
 		String dayString = input.nextLine();
 		int days = Integer.parseInt(dayString);
 		
+		
+		//creating ZooEmployee objects
 		ZooClock clock = new ZooClock(8); //starts at 8
-
 		ZooKeeper zookeeper = new ZooKeeper("David");
 		ZooAnnouncer zooAnnouncer = new ZooAnnouncer();
 		zookeeper.addObserver(zooAnnouncer);
-
 		ZooFoodServer server = new ZooFoodServer("Frank");
 		server.addObserver(zooAnnouncer);
 
-
+		
+		//creating animals
 		Cat cat = new Cat("Charlie");
 		Tiger tiger = new Tiger("Tom");
 		Dog dog = new Dog("Dug",new DogSleepBehavior());
@@ -32,17 +34,28 @@ public class Zoo {
 		Hippo hippo = new Hippo("Harry");
 		Rhino rhino = new Rhino("Rick");
 
+		
 		for (int i = 0; i < days; i++) {
 			System.out.println("Zookeeper arrives at Zoo on Day " + days);
 			int random = zookeeper.rand();
-
 			zookeeper.arrive(i+1);
 			
-			System.out.println("The zookeeper has arrived at " + clock.getClockStatus() + ":00 hours");
-			clock.iterateClock();
 			
-			System.out.println("The animals are starting to wake at " + clock.getClockStatus() + ":00 hours");
 			
+			//previous print statement replaced with filewriter function
+			//System.out.println("The zookeeper has arrived at " + clock.getClockStatus() + ":00 hours"); 
+			printWords("The zookeeper has arrived at " + clock.getClockStatus() + ":00 hours");
+			
+			
+			clock.iterateClock(); //9 o'clock
+			
+			
+			//previous print statement replaced with filewriter function
+			//System.out.println("The animals are starting to wake at " + clock.getClockStatus() + ":00 hours");
+			printWords("The animals are starting to wake at " + clock.getClockStatus() + ":00 hours");
+			
+			
+			//wake animal calls
 			zookeeper.wakeAnimal(cat);
 			zookeeper.wakeAnimal(tiger);
 			zookeeper.wakeAnimal(dog);
@@ -52,11 +65,17 @@ public class Zoo {
 			zookeeper.wakeAnimal(hippo);
 			zookeeper.wakeAnimal(rhino);
 			
-			clock.iterateClock();
-			clock.iterateClock();
-			System.out.println("The animals are being called at " + clock.getClockStatus() + ":00 hours");
+
+			
+			clock.iterateClock(); //10 o'clock
+			clock.iterateClock(); //11 o'clock
+			
+			//previous print statement replaced with filewriter function
+			//System.out.println("The animals are being called at " + clock.getClockStatus() + ":00 hours");
+			printWords("The animals are being called at " + clock.getClockStatus() + ":00 hours");
 
 
+			//call animal calls
 			zookeeper.callAnimal(cat);
 			zookeeper.callAnimal(tiger);
 			zookeeper.callAnimal(dog);
@@ -66,21 +85,22 @@ public class Zoo {
 			zookeeper.callAnimal(hippo);
 			zookeeper.callAnimal(rhino);
 			
-			clock.iterateClock();
+			
+			clock.iterateClock(); //12 o'clock
 			
 
-			server.make();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
-			server.serve();
-
-			server.make();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
-			server.serve();
-
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
 			
-			clock.iterateClock();
-			System.out.println("The animals are being fed at " + clock.getClockStatus() + ":00 hours");
+			server.make();
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
+			server.serve();
+			server.make();
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
+			server.serve();
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
+			
+			
+			clock.iterateClock(); //1 o'clock
+			printWords("The animals are being fed at " + clock.getClockStatus() + ":00 hours");
 
 			zookeeper.feedAnimal(cat);
 			zookeeper.feedAnimal(tiger);
@@ -92,12 +112,11 @@ public class Zoo {
 			zookeeper.feedAnimal(rhino);
 			
 			
-			clock.iterateClock();
-			clock.iterateClock();
+			clock.iterateClock(); //2 o'clock
+			clock.iterateClock(); //3 o'clock
 
-			System.out.println("The animals are exercising at" + clock.getClockStatus() + ":00 hours");
-
-			System.out.println("The animals are being exercised " + clock.getClockStatus() + ":00 hours");
+			printWords("The animals are exercising at" + clock.getClockStatus() + ":00 hours");
+			printWords("The animals are being exercised " + clock.getClockStatus() + ":00 hours");
 
 
 			zookeeper.exerciseAnimal(cat);
@@ -138,22 +157,22 @@ public class Zoo {
 			//////
 
 			server.clean();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
 			server.make();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
 			server.serve();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
 			server.clean();
 
 			server.clean();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
 			server.make();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
 			server.serve();
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
 			server.clean();
 
-			System.out.println(" at " + clock.getClockStatus() + ":00 hours");
+			printWords(" at " + clock.getClockStatus() + ":00 hours");
 
 			random = zookeeper.rand();
 
@@ -165,13 +184,13 @@ public class Zoo {
 				zookeeper.sleepAnimal(tiger);
 			}
 			
-			clock.iterateClock();
-			clock.iterateClock();
+			clock.iterateClock(); //4 o'clock
+			clock.iterateClock(); //5 o'clock
 			
 			///////////
 			
 
-			System.out.println("The animals are being put to sleep " + clock.getClockStatus() + ":00 hours");
+			printWords("The animals are being put to sleep " + clock.getClockStatus() + ":00 hours");
 
 			zookeeper.sleepAnimal(dog);
 			zookeeper.sleepAnimal(wolf);
@@ -180,18 +199,26 @@ public class Zoo {
 			zookeeper.sleepAnimal(hippo);
 			zookeeper.sleepAnimal(rhino);
 			
-			clock.iterateClock();
-			clock.iterateClock();
-			clock.iterateClock();
+			clock.iterateClock(); //6 o'clock
+			clock.iterateClock(); //7 o'clock
+			clock.iterateClock(); //8 o'clock
 
-			System.out.println("The zookeeper is leaving for the day at " + clock.getClockStatus() + ":00 hours");
+			printWords("The zookeeper is leaving for the day at " + clock.getClockStatus() + ":00 hours");
 			
 			zookeeper.leave(i+1);
 			
 			clock.resetClock();
 
 
-
 		}
+		
+	}
+	
+	
+	public static void printWords(String words) throws IOException {
+		FileWriter writer = new FileWriter("dayatthezoo.out", true);
+		writer.write(words);
+		writer.write("\n");
+		writer.close();
 	}
 }

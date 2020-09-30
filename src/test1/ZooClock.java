@@ -18,5 +18,6 @@ public class ZooClock {
 	public int getClockStatus() {
 		return clockStatus;
 	}
+	
 }
 	
