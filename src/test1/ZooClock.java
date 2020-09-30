@@ -19,4 +19,8 @@ public class ZooClock {
 		return clockStatus;
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3f2eae37f8a91066543ffb761b34eac5a1206973
