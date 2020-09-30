@@ -36,7 +36,7 @@ public class Zoo {
 
 		
 		for (int i = 0; i < days; i++) {
-			System.out.println("Zookeeper arrives at Zoo on Day " + days);
+			//System.out.println("Zookeeper arrives at Zoo on Day " + days);
 			int random = zookeeper.rand();
 			zookeeper.arrive(i+1);
 			
